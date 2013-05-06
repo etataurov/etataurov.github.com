@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+        <meta charset="utf-8">
+        <title>My blog - git</title>
+        <link rel="stylesheet" href="/theme/css/main.css">
+                
+        <!--[if IE]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">My blog </a></h1>
+                <nav><ul>
+                                                                                    <li ><a href="/category/git.html">Git</a></li>
+                                                </ul></nav>
+        </header><!-- /#banner -->
+                
+            
+
+                            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/git-svn.html">"Git SVN"</a></h1> 
+                    <footer class="post-info">
+        <abbr class="published" title="2012-11-30T15:49:00">
+                Пт. 30 Ноябрь 2012
+        </abbr>
+
+                <address class="vcard author">
+                By <a class="url fn" href="/author/evgeny-tataurov.html">Evgeny Tataurov</a>
+        </address>
+        <p>In <a href="/category/git.html">Git</a>. </p>
+<p>tags: <a href="/tag/git.html">git</a><a href="/tag/svn.html">svn</a><a href="/tag/naumen.html">naumen</a></p>
+</footer><!-- /.post-info --><p>До работы в NAUMEN гитом я, можно сказать, не пользовался, svn-ом тем более. Со временем почувствовал уверенность в работе с гитом, уже легко делал коммиты, ребэйзы, мерджи. С svn-ом тоже пришлось столкнуться, так как некоторые вещи лежат в svn и переносить на git планов нет.<br />
+Но была найдена удобная утилита git-svn, которая позволяля гитовскими командами работать с svn репозиториями. Конечно с удаленными ветками работать, просто как в гите нельзя, но вот локальные ветки - самые обычные как в гите.<br />
+Одна небольшая проблема только в том, что svn, как я понимаю, не дружит с нелинейной историей, а я часто работаю одновременно в различных локальных ветках, а главная ветка в это время тоже обновляется. В документации git-svn не советуют пользоваться merge, а советуют сделать патчи для каждого коммита. И в таком случае если захочется смержить ветку с какой-то новой фичей с мастером, то необходимо сделать<br />
+<strong>Добавить все изменения из мастера в текущую ветку</strong><br />
+<code>git rebase master</code><br />
+<strong>Сформировать патчи для всех коммитов, которых нет в мастере</strong><br />
+<code>git format-patch master</code><br />
+<strong>Перейти в master</strong><br />
+<code>git checkout master</code><br />
+<strong>Применить нужные патчи</strong><br />
+Раньше я делал это вручную, т.е. для каждого патча делал команду<br />
+<code>git apply filename.patch</code><br />
+При этом все изменения не коммитятся, но становятся в состояние staged for commit и потом надо вручную коммитить.<br />
+Можно воспользоваться командой<br />
+<code>git am filename.patch</code><br />
+Но при этом дата коммита останется той, что была у коммита из которого сформирован это патч, что для линейной истории, которая нам нужна, совсем не хорошо.<br />
+<code>git am filename.patch  --ignore-date</code><br />
+Такая команда позвонил сразу коммитит изменения патча и игнорирует дату патча, ставит текущую дату.<br />
+С помощью следующей команды можно применить все патчи из текущей папки с игнорированием ошибок пробелов и с игнорированием даты<br />
+<code>git am *.patch  --ignore-date --ignore-whitespace --ignore-space-change</code></p>
+<hr />
+<p>Вот такой первый пост.</p>                </article>
+                                                                </aside><!-- /#featured -->
+                                                </ol><!-- /#posts-list -->
+                        </section><!-- /#content -->
+                    <section id="extras" class="body">
+                        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
