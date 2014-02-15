@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-        <meta charset="utf-8">
+        <meta charset="utf-8" />
         <title>My blog - Git</title>
-        <link rel="stylesheet" href="/theme/css/main.css">
-                
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="My blog Atom Feed" />
+
         <!--[if IE]>
             <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
@@ -14,24 +15,23 @@
         <header id="banner" class="body">
                 <h1><a href="/">My blog </a></h1>
                 <nav><ul>
-                                                                                    <li class="active"><a href="/category/git.html">Git</a></li>
-                                                </ul></nav>
+                    <li class="active"><a href="/category/git.html">Git</a></li>
+                    <li><a href="/category/javascript.html">Javascript</a></li>
+                </ul></nav>
         </header><!-- /#banner -->
-                
-            
 
-                            <aside id="featured" class="body">
+            <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="/git-svn.html">"Git SVN"</a></h1> 
-                    <footer class="post-info">
+                    <h1 class="entry-title"><a href="/git-svn.html">"Git SVN"</a></h1>
+<footer class="post-info">
         <abbr class="published" title="2012-11-30T15:49:00">
-                Пт. 30 Ноябрь 2012
+                Fri 30 November 2012
         </abbr>
 
-                <address class="vcard author">
+        <address class="vcard author">
                 By <a class="url fn" href="/author/evgeny-tataurov.html">Evgeny Tataurov</a>
         </address>
-        <p>In <a href="/category/git.html">Git</a>. </p>
+<p>In <a href="/category/git.html">Git</a>. </p>
 <p>tags: <a href="/tag/git.html">git</a><a href="/tag/svn.html">svn</a><a href="/tag/naumen.html">naumen</a></p>
 </footer><!-- /.post-info --><p>До работы в NAUMEN гитом я, можно сказать, не пользовался, svn-ом тем более. Со временем почувствовал уверенность в работе с гитом, уже легко делал коммиты, ребэйзы, мерджи. С svn-ом тоже пришлось столкнуться, так как некоторые вещи лежат в svn и переносить на git планов нет.<br />
 Но была найдена удобная утилита git-svn, которая позволяля гитовскими командами работать с svn репозиториями. Конечно с удаленными ветками работать, просто как в гите нельзя, но вот локальные ветки - самые обычные как в гите.<br />
@@ -55,11 +55,18 @@
 <code>git am *.patch  --ignore-date --ignore-whitespace --ignore-space-change</code></p>
 <hr />
 <p>Вот такой первый пост.</p>                </article>
-                                                                </aside><!-- /#featured -->
-                                                </ol><!-- /#posts-list -->
-                        </section><!-- /#content -->
-                    <section id="extras" class="body">
-                        </section><!-- /#extras -->
+            </aside><!-- /#featured -->
+            </ol><!-- /#posts-list -->
+            </section><!-- /#content -->
+        <section id="extras" class="body">
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
 
         <footer id="contentinfo" class="body">
                 <address id="about" class="vcard body">
